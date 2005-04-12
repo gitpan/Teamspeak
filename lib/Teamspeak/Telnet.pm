@@ -1,5 +1,5 @@
-# $Id: Telnet.pm 6 2005-01-13 21:11:16Z maletin $
-# $URL: svn://svn.berlios.de/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pm $
+# $Id: Telnet.pm 19 2005-04-12 09:15:03Z maletin $
+# $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pm $
 
 package Teamspeak::Telnet;
 
@@ -7,7 +7,7 @@ use 5.004;
 use strict;
 use Carp;
 use vars qw( $VERSION );
-$VERSION = '0.1';
+$VERSION = '0.2';
 my @ISA = qw( Teamspeak );
 
 ## Module import.
@@ -40,9 +40,7 @@ sub sl {
   my $self = shift;
   $self->{sock}->print('sl');
   my @answer = $self->{sock}->waitfor('/OK$/');
-  $self->{err}    = 0;
-  $self->{errmsg} = undef;
-  return @answer;
+  return grep( /^\d+$/, split( /\cJ/, "@answer" ) );
 }
 
 # Select Server:
@@ -75,38 +73,70 @@ sub login {
   return 1;
 }    # login
 
-# DataBase USERLIST:
+# Database userlist:
 sub dbuserlist {
   my $self   = shift;
   my @result = ();
   my_die("command needs login") if !logged_in();
   $self->{sock}->print('dbuserlist');
   my @answer = $self->{sock}->waitfor('/OK$/');
-  foreach my $line (@answer) {
-    my @r = split( /\t/, $line );
-    push( @result, [@r] );
+  pop @answer;  # Last Line contains OK
+  my @lines = split( /\cJ/, "@answer" );
+  shift @lines; # First Line is empty
+  my $fields = shift @lines;
+  my @fields = split( /\cI/, $fields );
+  foreach my $line (@lines) {
+    my @r = split( /\cI/, $line );
+    my %args = map {
+      $r[$_] =~ s/^"(.*)"$/$1/;
+      $r[$_] =~ s/^(\d\d)-(\d\d)-(\d{4})/$3-$2-$1/;
+      $fields[$_] => $r[$_] } 0..@r-1;
+    push( @result, { %args } );
   }
   return @result;
 }    # dbuserlist
 
-# DataBase USERDELete:
-sub dbuserdel {
+# Database userdelete:
+sub delete_user {
   my ( $self, $user_id ) = @_;
   $self->{sock}->print("dbuserdel $user_id");
   my @answer = $self->{sock}->waitfor('/OK$/');
   $self->{err}    = 0;
   $self->{errmsg} = undef;
   return 1;
-}    # dbuserdel
+}    # delete_user
+
+# Database useradd:
+sub add_user {
+  my ( $self, %args ) = @_;
+  $args{admin} = 0 if $args{admin} != 1;
+  $self->{sock}->print("dbuseradd $args{user} $args{pwd} $args{pwd} $args{admin}");
+  my @answer = $self->{sock}->waitfor('/OK$/');
+  $self->{err}    = 0;
+  $self->{errmsg} = undef;
+  return 1;
+}    # add_user
 
 # Channel List:
 sub cl {
   my $self = shift;
   $self->{sock}->print('cl');
   my @answer = $self->{sock}->waitfor('/OK$/');
-  $self->{err}    = 0;
-  $self->{errmsg} = undef;
-  return @answer;
+  pop @answer;  # Last Line contains OK
+  my @lines = split( /\n/, "@answer" );
+  shift @lines; # First Line is empty
+  my $fields = shift @lines;
+  my @fields = split( /\t/, $fields );
+  my @result = ();
+  foreach my $line (@lines) {
+    my @r = split( /\t/, $line );
+    my %args = map {
+      $r[$_] =~ s/^"(.*)"$/$1/;
+      $r[$_] =~ s/^(\d\d)-(\d\d)-(\d{4})/$3-$2-$1/;
+      $fields[$_] => $r[$_] } 0..@r-1;
+    push( @result, { %args } );
+  }
+  return @result;
 }    # cl
 
 # Player List:
@@ -114,10 +144,22 @@ sub pl {
   my $self = shift;
   $self->{sock}->print('pl');
   my @answer = $self->{sock}->waitfor('/OK$/');
-  $self->{err}    = 0;
-  $self->{errmsg} = undef;
-  return @answer;
-}    # cl
+  pop @answer;  # Last Line contains OK
+  my @lines = split( /\n/, "@answer" );
+  shift @lines; # First Line is empty
+  my $fields = shift @lines;
+  my @fields = split( /\t/, $fields );
+  my @result = ();
+  foreach my $line (@lines) {
+    my @r = split( /\t/, $line );
+    my %args = map {
+      $r[$_] =~ s/^"(.*)"$/$1/;
+      $r[$_] =~ s/^(\d\d)-(\d\d)-(\d{4})/$3-$2-$1/;
+      $fields[$_] => $r[$_] } 0..@r-1;
+    push( @result, { %args } );
+  }
+  return @result;
+}    # pl
 
 # QUIT:
 sub quit {

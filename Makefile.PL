@@ -12,6 +12,6 @@ WriteMakefile(
 
 $Id: Makefile.PL 7 2005-01-19 15:54:19Z maletin $
 
-$URL: svn://svn.berlios.de/cpan-teamspeak/cpan/trunk/Makefile.PL $
+$URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/Makefile.PL $
 
 =cut

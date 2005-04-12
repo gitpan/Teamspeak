@@ -1,5 +1,5 @@
 ==============================================================================
-                 Release of version 0.1 of Teamspeak
+                 Release of version 0.2 of Teamspeak
 ==============================================================================
 
 
@@ -15,18 +15,22 @@ DESCRIPTION
 
 LIMITATIONS
 
-    * The Telnet-Connection is not secure.
+    * The Web- and Telnet-Connections are not secure.
 
     * The MySQL-Interface has no functions at the Moment.
+
+    * The tests are not configurable and will fail without a local
+      Teamspeak Server.
 
 
 PREREQUISITES
 
     In order to use Teamspeak, you need at least one of the
     following Modules:
-      a) Net::Telnet to use the Telnet-Interface.
-      b) DBD::mysql to use the MySQL-Interface.
-      c) DBD::SQLite to use the SQLite-Interface.
+      1) Net::Telnet to use the Telnet-Interface.
+      2) DBD::mysql to use the MySQL-Interface.
+      3) DBD::SQLite to use the SQLite-Interface.
+      4) WWW::Mechanize to use the HTTP-Interface.
 
 
 INSTALLATION
@@ -37,7 +41,7 @@ INSTALLATION
 
 CHANGES AND FUTURE DEVELOPMENT
 
-    This readme refers to versions 0.1.
+    This readme refers to versions 0.2.
     For details of changes, refer to the file Changes.
 
 
@@ -61,7 +65,8 @@ AVAILABILITY
 
 Teamspeak will be uploaded to the CPAN.
 
-$URL: svn://svn.berlios.de/cpan-teamspeak/cpan/trunk/README $
-$Id: README 7 2005-01-19 15:54:19Z maletin $
+$URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/README $
+
+$Id: README 21 2005-04-12 13:30:26Z maletin $
 
 ==============================================================================

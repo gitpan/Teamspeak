@@ -1,5 +1,8 @@
-$Id: Changes 3 2005-01-12 14:14:56Z maletin $
-$URL: svn://svn.berlios.de/cpan-teamspeak/cpan/trunk/Changes $
+$Id: Changes 21 2005-04-12 13:30:26Z maletin $
+$URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/Changes $
+
+0.2 2005-04-12
+  This Module produce some useful results for a small set of methods.
 
 0.1 2005-01-11
   Initial Release on Subversion Repository.

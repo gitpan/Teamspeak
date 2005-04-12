@@ -1,14 +1,13 @@
-# $Id: SQL.pm 8 2005-01-19 16:02:07Z maletin $
-# $URL: svn://svn.berlios.de/cpan-teamspeak/cpan/trunk/lib/Teamspeak/SQL.pm $
+# $Id: SQL.pm 20 2005-04-12 09:54:31Z maletin $
+# $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/SQL.pm $
 
 package Teamspeak::SQL;
 
 use 5.004;
 use strict;
-use Carp;
 use DBI;
 use vars qw( $VERSION );
-$VERSION = '0.1';
+$VERSION = '0.2';
 my @ISA = qw( Teamspeak );
 
 sub connect {
@@ -40,14 +39,51 @@ sub new {
   bless $s, ref($class) || $class;
 }    # new
 
+sub get_channel {
+  my $self = shift;
+  my $s    = 'select * from ts2_channels';
+  my $all = $self->{db}->selectall_hashref( $s, 'i_channel_id' );
+  my @result;
+  foreach my $c ( keys %$all ) {
+    $all->{$c}{dbh} = $self->{db}; # Database Handle for Updates.
+    push @result, bless( $all->{$c}, 'Teamspeak::Channel' );
+  }
+  return \@result;
+}    # get_channel
+
 sub sl {
   my $self = shift;
   my $s    = 'select * from ts2_servers';
   return $self->{db}->selectall_hashref( $s, 'i_server_id' );
 }    # sl
 
-sub my_die {
-  croak "my_die";
-}    # my_die
+package Teamspeak::Channel;
+
+my @_parameter = ( 's_channel_description', 'dt_channel_created',
+    's_channel_name', 'i_channel_parent_id', 'i_channel_codec',
+    'b_channel_flag_hierarchical', 's_channel_topic', 'i_channel_order',
+    's_channel_password', 'b_channel_flag_moderated',
+    'b_channel_flag_default', 'i_channel_maxusers', 'i_channel_server_id' );
+
+sub store {
+  my $self = shift;
+  my $sql = "update ts2_channels set "
+    . join( ', ', map { "$_ = ?" } @_parameter )
+    . " where i_channel_id = ?";
+  my $rows_affected = $self->{dbh}->do( $sql, {},
+      map( { $self->{$_} } @_parameter ), $self->{i_channel_id} );
+  if( $rows_affected == 1 or $rows_affected == 0 ) {
+    return 1; # Even unmodified Channels report sucess.
+  } else {
+    $self->{err} = 1;
+    $self->{errstr} = "$rows_affected Channels modified.";
+    return 0; # should never happen, because i_channel_id is primary key.
+  }
+}    # Teamspeak::Channel::store
+
+sub parameter {
+  my $self = shift;
+  return map { $_ =~ m/.+_channel_(.*)/; $1 } @_parameter;
+}    # Teamspeak:Channel::parameter
 
 1;

@@ -1281,7 +1281,7 @@ and/or modified under the same terms as Perl itself.
 
 =item $Id: Telnet.pod 3 2005-01-12 14:14:56Z maletin $
 
-=item $URL: svn://svn.berlios.de/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pod $
+=item $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pod $
 
 =back
 
