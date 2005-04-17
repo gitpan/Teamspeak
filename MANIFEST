@@ -19,3 +19,4 @@ t/05sqlite.t
 t/06sqlch.t
 t/07web.t
 t/server.dbs
+META.yml                                 Module meta-data (added by MakeMaker)

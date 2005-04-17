@@ -1,4 +1,4 @@
-# $Id: Teamspeak.pm 20 2005-04-12 09:54:31Z maletin $
+# $Id: Teamspeak.pm 23 2005-04-17 02:18:27Z maletin $
 # $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak.pm $
 
 package Teamspeak;
@@ -11,7 +11,7 @@ use Net::Telnet;
 use Carp;
 use vars qw( $VERSION );
 
-$VERSION = '0.2';
+$VERSION = '0.3';
 
 sub new {
   my ( $class, %arg ) = @_;
@@ -49,7 +49,7 @@ Teamspeak - Interface to administrate Teamspeak-Server.
 
 =head1 VERSION
 
-This document refers to version 0.2 of Teamspeak.
+This document refers to version 0.3 of Teamspeak.
 
 =head1 SYNOPSIS
 

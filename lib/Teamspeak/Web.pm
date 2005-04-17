@@ -1,4 +1,4 @@
-# $Id: Web.pm 17 2005-03-18 12:42:28Z maletin $
+# $Id: Web.pm 23 2005-04-17 02:18:27Z maletin $
 # $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Web.pm $
 
 package Teamspeak::Web;
@@ -8,7 +8,7 @@ use strict;
 use Carp;
 use WWW::Mechanize;
 use vars qw( $VERSION );
-$VERSION = '0.2';
+$VERSION = '0.3';
 
 sub slogin {
   my ( $self, $login, $password ) = @_;

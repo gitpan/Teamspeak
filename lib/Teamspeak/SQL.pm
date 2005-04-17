@@ -1,4 +1,4 @@
-# $Id: SQL.pm 20 2005-04-12 09:54:31Z maletin $
+# $Id: SQL.pm 23 2005-04-17 02:18:27Z maletin $
 # $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/SQL.pm $
 
 package Teamspeak::SQL;
@@ -7,7 +7,7 @@ use 5.004;
 use strict;
 use DBI;
 use vars qw( $VERSION );
-$VERSION = '0.2';
+$VERSION = '0.3';
 my @ISA = qw( Teamspeak );
 
 sub connect {

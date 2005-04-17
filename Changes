@@ -1,5 +1,9 @@
-$Id: Changes 21 2005-04-12 13:30:26Z maletin $
+$Id: Changes 23 2005-04-17 02:18:27Z maletin $
 $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/Changes $
+
+0.3 2005-04-17
+  Teamspeak::Telnet.pm is setting err and errmsg and is using Net::Telnet
+  more correct.
 
 0.2 2005-04-12
   This Module produce some useful results for a small set of methods.

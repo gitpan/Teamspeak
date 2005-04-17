@@ -1,4 +1,4 @@
-# $Id: Player.pm 21 2005-04-12 13:30:26Z maletin $
+# $Id: Player.pm 23 2005-04-17 02:18:27Z maletin $
 # $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Player.pm $
 
 
@@ -6,7 +6,7 @@ package Teamspeak::Player;
 
 use strict;
 use vars qw( $VERSION );
-$VERSION = '0.2';
+$VERSION = '0.3';
 
 sub new {
   my( $self, %args ) = @_;

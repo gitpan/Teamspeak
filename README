@@ -1,5 +1,5 @@
 ==============================================================================
-                 Release of version 0.2 of Teamspeak
+                 Release of version 0.3 of Teamspeak
 ==============================================================================
 
 
@@ -41,7 +41,7 @@ INSTALLATION
 
 CHANGES AND FUTURE DEVELOPMENT
 
-    This readme refers to versions 0.2.
+    This readme refers to versions 0.3.
     For details of changes, refer to the file Changes.
 
 
@@ -67,6 +67,6 @@ Teamspeak will be uploaded to the CPAN.
 
 $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/README $
 
-$Id: README 21 2005-04-12 13:30:26Z maletin $
+$Id: README 23 2005-04-17 02:18:27Z maletin $
 
 ==============================================================================
