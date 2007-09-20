@@ -1,5 +1,8 @@
-$Id: Changes 23 2005-04-17 02:18:27Z maletin $
+$Id: Changes 28 2006-05-20 17:45:01Z maletin $
 $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/Changes $
+
+0.4 2006-05-20
+  New Objects Ban and Privileges for different Handles.
 
 0.3 2005-04-17
   Teamspeak::Telnet.pm is setting err and errmsg and is using Net::Telnet

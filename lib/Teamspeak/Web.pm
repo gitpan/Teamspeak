@@ -1,4 +1,4 @@
-# $Id: Web.pm 23 2005-04-17 02:18:27Z maletin $
+# $Id: Web.pm 28 2006-05-20 17:45:01Z maletin $
 # $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Web.pm $
 
 package Teamspeak::Web;
@@ -8,29 +8,30 @@ use strict;
 use Carp;
 use WWW::Mechanize;
 use vars qw( $VERSION );
-$VERSION = '0.3';
+$VERSION = '0.4';
 
 sub slogin {
   my ( $self, $login, $password ) = @_;
   my $mech = $self->{mech};
   $mech->follow_link;
-  $mech->submit_form( fields => { username => $login, password => $password } ) or return $self->error( 'slogin' );
+  $mech->submit_form( fields => { username => $login, password => $password } )
+    or return $self->error('slogin');
   $self->{slogin} = $login;
-  $self->{err} = undef;
+  $self->{err}    = undef;
   $self->{errstr} = undef;
   return 1;
-} # slogin
+}    # slogin
 
 sub connect {
   my ( $self, %arg ) = @_;
-  my $url = "http://$self->{w_host}:$self->{w_port}/";
+  my $url  = "http://$self->{w_host}:$self->{w_port}/";
   my $mech = WWW::Mechanize->new;
-  $mech->get( $url ) or return $self->error( 'connect' );
-  $self->{mech} = $mech;
+  $mech->get($url) or return $self->error('connect');
+  $self->{mech}    = $mech;
   $self->{connect} = 1;
-  $self->login( $arg{login}, $arg{pwd} ) if( $arg{login} );
-  $self->slogin( $arg{slogin}, $arg{pwd} ) if( $arg{slogin} );
-  return 1; # Success
+  $self->login( $arg{login}, $arg{pwd} ) if ( $arg{login} );
+  $self->slogin( $arg{slogin}, $arg{pwd} ) if ( $arg{slogin} );
+  return 1;    # Success
 }    # connect
 
 sub new {

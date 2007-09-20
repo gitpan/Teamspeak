@@ -10,7 +10,7 @@ WriteMakefile(
 
 =head1
 
-$Id: Makefile.PL 7 2005-01-19 15:54:19Z maletin $
+$Id: Makefile.PL,v 1.1 2006/05/20 16:51:21 moertzen Exp $
 
 $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/Makefile.PL $
 

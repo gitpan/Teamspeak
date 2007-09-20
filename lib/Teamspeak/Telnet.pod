@@ -1,3 +1,4 @@
+
 =head1 NAME
 
 Teamspeak::Telnet - Telnet-Interface to administrate
@@ -1279,10 +1280,11 @@ and/or modified under the same terms as Perl itself.
 
 =item Teamspeak::Telnet has been uploaded to the CPAN.
 
-=item $Id: Telnet.pod 3 2005-01-12 14:14:56Z maletin $
+=item $Id: Telnet.pod 27 2006-05-20 17:24:01Z maletin $
 
 =item $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pod $
 
 =back
 
 =cut
+

@@ -1,15 +1,15 @@
 #!/usr/bin/perl -w
-# $Id: 04sql.t 7 2005-01-19 15:54:19Z maletin $
+# $Id: 04sql.t 28 2006-05-20 17:45:01Z maletin $
 # $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/t/04sql.t $
 
 use strict;
 use Teamspeak;
 use Test::Simple tests => 1;
 
-my $n = Teamspeak->new(
+my $tsh = Teamspeak->new(
   type => 'sql',
   host => 'localhost',
   db   => 'teamspeak'
 );
-$n->connect( 'teamspeak', 'teamspeak' );
-ok( defined $n->sl, 'sql sl' );
+$tsh->connect( 'teamspeak', 'teamspeak' );
+ok( defined $tsh->sl, 'sql sl' );
