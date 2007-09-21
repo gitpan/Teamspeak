@@ -1,0 +1,42 @@
+=head1 NAME
+
+Teamspeak - Interface to administrate Teamspeak-Voice-Server
+
+=head1 SYNOPSIS
+
+  use Teamspeak;
+  Teamspeak->new( type => 'telnet', host => 'localhost', port => 51234 );
+
+=head1 CLASS METHODS
+
+=head2 new 
+
+  Teamspeak->new( type => $type, ... )
+
+The rest of the Parameters depends on the value of $type.
+$type can be either I<telnet>, I<web>, I<sql> or I<udp>.
+See L<"Teamspeak::Telnet">, L<"Teamspeak::SQL">,
+L<"Teamspeak::Web"> or L<"Teamspeak::UDP"> respectivly.
+
+=head2 error
+
+This sets the error value and errstr.
+
+=head2 _croak()
+
+All errors that are generated will use the _croak() method.
+
+=head1 AVAILABILITY
+
+=over
+
+=item Teamspeak has been uploaded to the CPAN.
+
+=item $Id$
+
+=item $URL$
+
+=back
+
+=cut
+
