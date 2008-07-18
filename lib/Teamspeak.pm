@@ -1,5 +1,5 @@
-# $Id: Teamspeak.pm 28 2006-05-20 17:45:01Z maletin $
-# $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak.pm $
+# $Id: Teamspeak.pm 37 2008-03-09 01:10:00Z maletin $
+# $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak.pm $
 
 package Teamspeak;
 use Teamspeak::Channel;
@@ -11,7 +11,7 @@ use Net::Telnet;
 use Carp;
 use vars qw( $VERSION );
 
-$VERSION = '0.5';
+$VERSION = '0.6';
 
 sub new {
     my ( $class, %arg ) = @_;
@@ -28,13 +28,14 @@ sub new {
         return Teamspeak::Web->new(%arg);
     }
     else {
-        die("unknown type $arg{type}");
+        croak("unknown type $arg{type}");
     }
 }    # new
 
 sub error {
-    $_[0]->{err}    = 1;
-    $_[0]->{errstr} = $_[1];
+    my ($self) = @_;
+    $self->{err}    = 1;
+    $self->{errstr} = $_[1];
     return 0;
 }    # error
 
@@ -53,7 +54,7 @@ Teamspeak - Interface to administrate Teamspeak-Server.
 
 =head1 VERSION
 
-This document refers to version 0.5 of Teamspeak.
+This document refers to version 0.6 of Teamspeak.
 
 =head1 SYNOPSIS
 
@@ -74,15 +75,21 @@ You can connect to a Teamspeak-Server in four different Connection-Types:
 
 Every Connection-Type can only use a part of all available Methods.
 
-=head2 Overview
+=head1 SUBROUTINES/METHODS
 
-=head2 Constructor and initialization
+=head2 new( type => conn_type, [...] )
 
-=head2 Class and object methods
+conn_type is the connection type and can be telnet, sql or web.
 
-=head1 ENVIRONMENT
+=head2 error( [$parms, ] $msg )
+
+Used internally to set the error status and message.
+
+=head1 CONFIGURATION AND ENVIRONMENT
 
 There are no Environment-Variables used, at the moment.
+
+=head1 DEPENDENCIES
 
 =head1 DIAGNOSTICS
 
@@ -94,7 +101,9 @@ The Project is still Pre-Alpha.
 
 =back
 
-=head1 BUGS
+=head1 INCOMPATIBILITIES
+
+=head1 BUGS AND LIMITATIONS
 
 There are undoubtedly serious bugs lurking somewhere in this code, if
 only because parts of it give the impression of understanding a great deal
@@ -124,8 +133,8 @@ http://cpan-teamspeak.berlios.de/
 
 Martin von Oertzen (maletin@cpan.org)
 
-=head1 COPYRIGHT
+=head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2005-2006, Martin von Oertzen. All Rights Reserved.
+Copyright (c) 2005-2008, Martin von Oertzen. All Rights Reserved.
 This module is free software. It may be used, redistributed
 and/or modified under the same terms as Perl itself.

@@ -1,5 +1,5 @@
-# $Id: Web.pm 28 2006-05-20 17:45:01Z maletin $
-# $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Web.pm $
+# $Id: Web.pm 37 2008-03-09 01:10:00Z maletin $
+# $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Web.pm $
 
 package Teamspeak::Web;
 
@@ -8,7 +8,7 @@ use strict;
 use Carp;
 use WWW::Mechanize;
 use vars qw( $VERSION );
-$VERSION = '0.5';
+$VERSION = '0.6';
 
 sub _slogin {
     my ( $self, $login, $password ) = @_;
@@ -46,3 +46,27 @@ sub new {
 }    # new
 
 1;
+
+__END__
+
+=head1 NAME
+
+Teamspeak::Web - The HTTP-Interface to administrate Teamspeak-Server.
+
+=head2 connect
+
+=head2 new
+
+=head1 SEE ALSO
+
+C<Teamspeak>
+
+=head1 AUTHOR
+
+Martin von Oertzen (maletin@cpan.org)
+
+=head1 COPYRIGHT
+
+Copyright (c) 2005-2008, Martin von Oertzen. All Rights Reserved.
+This module is free software. It may be used, redistributed
+and/or modified under the same terms as Perl itself.

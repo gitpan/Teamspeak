@@ -1,5 +1,5 @@
-# $Id$
-# $URL$
+# $Id: Channel.pm 37 2008-03-09 01:10:00Z maletin $
+# $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/SQL/Channel.pm $
 
 package Teamspeak::SQL::Channel;
 my @ISA = qw( Teamspeak::Channel );

@@ -1,5 +1,8 @@
-$Id$
-$URL$
+$Id: Changes 35 2007-10-21 22:23:54Z maletin $
+$URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/Changes $
+
+0.6 2007-10-22
+  tests corrected.
 
 0.5 2007-09-21
   New Tests.

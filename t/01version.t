@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
-# $Id: 01version.t,v 1.1 2006/05/20 16:51:21 moertzen Exp $
-# $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/t/01version.t $
+# $Id: 01version.t 3 2005-01-12 14:14:56Z maletin $
+# $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/t/01version.t $
 
 use strict;
 use Teamspeak;

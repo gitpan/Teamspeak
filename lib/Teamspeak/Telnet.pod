@@ -1323,7 +1323,7 @@ Martin von Oertzen (maletin@cpan.org)
 
 =head1 COPYRIGHT
 
-Copyright (c) 2005-2005, Martin von Oertzen. All Rights Reserved.
+Copyright (c) 2005-2007, Martin von Oertzen. All Rights Reserved.
 This module is free software. It may be used, redistributed
 and/or modified under the same terms as Perl itself.
 
@@ -1333,9 +1333,9 @@ and/or modified under the same terms as Perl itself.
 
 =item Teamspeak::Telnet has been uploaded to the CPAN.
 
-=item $Id: Telnet.pod 27 2006-05-20 17:24:01Z maletin $
+=item $Id: Telnet.pod 35 2007-10-21 22:23:54Z maletin $
 
-=item $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pod $
+=item $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pod $
 
 =back
 

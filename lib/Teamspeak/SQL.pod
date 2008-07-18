@@ -190,9 +190,9 @@ for TS-Server of Version 2.0.23.19
 
 =item Teamspeak::SQL has been uploaded to the CPAN.
 
-=item $Id: SQL.pod 27 2006-05-20 17:24:01Z maletin $
+=item $Id: SQL.pod 33 2007-09-21 01:03:27Z maletin $
 
-=item $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/SQL.pod $
+=item $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/SQL.pod $
 
 =back
 

@@ -1,10 +1,10 @@
-# $Id: Ban.pm 28 2006-05-20 17:45:01Z maletin $
-# $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Ban.pm $
+# $Id: Ban.pm 35 2007-10-21 22:23:54Z maletin $
+# $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Ban.pm $
 
 package Teamspeak::Ban;
 
 use strict;
 use vars qw( $VERSION );
-$VERSION = '0.5';
+$VERSION = '0.6';
 
 1;

@@ -1,6 +1,5 @@
 Changes
 lib/Teamspeak.pm
-lib/Teamspeak.pod
 lib/Teamspeak/Ban.pm
 lib/Teamspeak/Ban.pod
 lib/Teamspeak/Channel.pm
@@ -18,24 +17,21 @@ lib/Teamspeak/Telnet.pod
 lib/Teamspeak/Telnet/Channel.pm
 lib/Teamspeak/Telnet/Channel.pod
 lib/Teamspeak/Web.pm
-lib/Teamspeak/Web.pod
 LICENSE
 Makefile.PL
-MANIFEST			This list of files
+MANIFEST
+META.yml
 README
 SIGNATURE
 t/00signature.t
 t/01version.t
 t/09pod.t
 t/10distribution.t
-t/kwalitee.t
 t/mysql/channel.t
 t/mysql/connect.t
-t/server.dbs
 t/sqlite/channel.t
 t/sqlite/server.dbs
 t/telnet/cl_params.t
 t/telnet/connect.t
 t/telnet/sl.t
 t/web/connect.t
-META.yml                                 Module meta-data (added by MakeMaker)

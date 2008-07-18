@@ -1,5 +1,5 @@
-# $Id$
-# $URL$
+# $Id: Channel.pm 37 2008-03-09 01:10:00Z maletin $
+# $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet/Channel.pm $
 
 package Teamspeak::Telnet::Channel;
 my @ISA = qw( Teamspeak::Channel );
@@ -75,6 +75,32 @@ sub topic {
 
 1;
 
-=head A
+__END__
+
+=head1 NAME
+
+Teamspeak::Telnet::Channel - Datastructure for a Teamspeak-Channel.
+
+=head2 parameter()
+
+=head2 new()
+
+=head2 id()
+
+=head2 codec()
+
+=head2 parent()
+
+=head2 order()
+
+=head2 maxusers()
+
+=head2 name()
+
+=head2 flags()
+
+=head2 password()
+
+=head2 topic()
 
 =cut

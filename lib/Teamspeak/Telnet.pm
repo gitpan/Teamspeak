@@ -1,5 +1,5 @@
-# $Id: Telnet.pm 31 2006-05-25 05:54:05Z kohlert $
-# $URL: svn+ssh://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pm $
+# $Id: Telnet.pm 35 2007-10-21 22:23:54Z maletin $
+# $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/lib/Teamspeak/Telnet.pm $
 
 package Teamspeak::Telnet;
 
@@ -8,7 +8,7 @@ use strict;
 use Carp;
 use vars qw( $VERSION );
 use Teamspeak::Telnet::Channel;
-$VERSION = '0.5';
+$VERSION = '0.6';
 my @ISA = qw( Teamspeak );
 
 ## Module import.

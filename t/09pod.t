@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
-# $Id$
-# $URL$
+# $Id: 09pod.t 37 2008-03-09 01:10:00Z maletin $
+# $URL: http://svn.berlios.de/svnroot/repos/cpan-teamspeak/cpan/trunk/t/09pod.t $
 
 use strict;
 use Teamspeak;
